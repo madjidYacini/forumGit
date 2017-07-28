@@ -1,0 +1,174 @@
+/*le conteneur de toute la page */
+#complete{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+/*bar de navigation*/
+#slide-out{
+    display: flex;
+    flex-direction: column;
+}
+
+/*l'image logo de la biblio*/
+#logo{
+    margin: 20px;
+    margin-bottom: 80px;
+}
+
+/*menu latérale*/
+#slide-out .btn_menu{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1em;
+    margin-left: 1.5em;
+    margin-bottom: 5px;
+    margin-right: 2.5em;
+    padding: 0em 0.5em;
+    border-radius: 0.4em;
+    font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+#slide-out .btn_menu:after{
+    content: '';
+    border-bottom: solid 1px;
+    border-color: #171E29;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
+    display: block;
+}
+
+#slide-out .btn_menu:hover{
+    background-color: #fafafa;
+    color: black;
+    text-decoration: none;
+}
+
+
+/*principale (toute la page sauf la bar de navigation latérale)*/
+#principale{
+    margin-bottom: 0px;
+    padding-right: 0px;
+}
+
+/*le boutton de menu latéral pour les moyens et petits écrans*/
+#bouttonMenu{
+    font-size:2.0em;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    color: #F4511E;
+    padding: 0.1em 0.3em;
+}
+
+@media screen and (min-width:993px){
+    /*principale*/
+    #principale{
+        margin-left: 210px;
+    }
+
+    /*boutton de la barre navigation et l'image de l'accueil*/
+    #imageButton{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:993px){
+    /*image de la barre latérale pour petite et moyen écran*/
+    #image img{
+        position: absolute;
+        top: 0px; left: 0px;
+        z-index: 1;
+    }
+
+    /*boutton de nav bar pour les petit et moyen écran*/
+    #bouttonMenu{
+        z-index: 100;
+    }
+
+    /*annonces pour petit et moyen écran*/
+    #annonceCalendrier{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #annonces{
+        order: 2;
+    }
+    /*slider pour petit et moyen écran*/
+    #slider{
+        width: 86vw;
+        display: flex;
+        order: 1;
+    }
+
+    /*div de image et boutton pour petit et moyen écran*/
+    #imageButton{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+/*annonce et calendrier*/
+#annonceCalendrier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/*annonces*/
+#annonces{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.annonce {
+    /*font-size: 0.7em;*/
+    font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.annonce p::first-letter{
+    text-transform: capitalize;
+    font-size: 1.4em;
+}
+
+.annonce hr{
+    width: 65%;
+    border: 1px solid black;
+}
+
+/*le scroll en haut de bas de page*/
+#scrollTop{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1000;
+}
+
+@media screen and (max-width:993px){
+    #scrollTop{
+        width: 7%;
+    }
+}
+/*le boutton pour signaler questions ou réponses*/
+.btnSignal{
+    width: 20px;
+    border-radius: 20px;
+}
+/*tout les bouttons des pages*/
+.btn, .btn-flat{
+  text-transform: capitalize;
+}
+
+/*iframe de l'éditeur*/
+#editor{
+  border: none;
+}
